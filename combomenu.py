@@ -117,18 +117,17 @@ order = ["", "", "", 0]
 sandwich_index = 0
 beverage_index = 1
 fires_index = 2
-ketchup_index = # what number would go here?
-# why is this represented with an integer in the list setup?
+ketchup_index = 3
 
-"""" set up the first conditional for the sandwich order.
-order[sandwich_index] is identifying a specific element in the order list. input takes the order as a string and saves it to the list element identified, in this case 0, which is sandwich_index """
+
 
 order[sandwich_index] = input("Would you like a chicken, beef, or tofu sandwich?")
 if (order[sandwich_index] == "chicken"):
- total += # what is the price of this sandwich?
-elif (what_list?[what_index?] == "What other type of sandwich can be ordered?"):
- total += # what is the price of this other sandwich?
-# what other conditionals should be included here?
+    total += 5.25
+elif (order[sandwich_index] == "beef"):
+    total += 6.25
+elif (order[sandwich_index] == "tofu"):
+    total += 5.75
 else:
- print("You did not select a sandwich type.")
- selected_a_sandwich = False
+    print("You did not select a sandwich type.")
+    selected_a_sandwich = False
