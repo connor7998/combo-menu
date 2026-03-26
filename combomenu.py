@@ -119,7 +119,9 @@ while True:
         order_list.append  (input("Would you like a chicken, beef, chorizo, or tofu sandwich?"))
         order_list.append (input("Would you like a small, medium, large, or extra large beverage?"))
         order_list.append (input("Would you like small, medium, or large french fries?"))
+        order_list.append (input("How many ketchup packets would you like? Cost $0.25 each"))
 
     print(order_list)
+    print(f"Total cost of your order is: ${cost:.2f}")
     if not order_again:
         break
