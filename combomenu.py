@@ -31,7 +31,6 @@ if flag_sandwich:
             cost += 7.50
     else:
         print("Error for sandwich")
-        order_list.append("")
 else:
     print("skipping sandwich")
     order_list.append("")
@@ -48,6 +47,7 @@ if flag_beverage:
     size_beverage = input("What size would you like? S/M/L/XL: ").strip().upper()
     if size_beverage in ("S", "M", "L", "XL"):
         print("You ordered a " + size_beverage + " beverage")
+        order_list.append(size_beverage)
         if size_beverage == "S":
             cost += 1.00
         elif size_beverage == "M":
@@ -58,6 +58,7 @@ if flag_beverage:
             cost += 2.75
     else:
         print("Error for beverage size")
+        order_list.append("")
 
 # French Fries Menu
 flag_frenchfries = get_yes_no("Do you want french fries? Y/N: ")
@@ -68,6 +69,7 @@ if flag_frenchfries:
     print("large $2.00")
     size_frenchfries = input("What size would you like? S/M/L: ").strip().upper()
     if size_frenchfries in ("S", "M", "L"):
+        order_list.append(size_frenchfries)
         if size_frenchfries == "S":
             mega = get_yes_no("Do you want to mega size your french fries? Y/N: ")
             if mega:
@@ -83,6 +85,7 @@ if flag_frenchfries:
         print("You ordered " + size_frenchfries + " french fries")
     else:
         print("Error for french fries size")
+        order_list.append("")
 
 # Ketchup
 while True:
@@ -96,10 +99,13 @@ while True:
 
 print("You ordered " + str(num_ketchup) + " packets of ketchup")
 cost += num_ketchup * 0.25
-
+order_list.append(num_ketchup)
 # Discount
 if flag_sandwich and flag_beverage and flag_frenchfries:
     cost -= 1.00
+
+# tell what they ordered
+print(order_list)
 
 # Total Cost
 print(f"Total cost of your order is: ${cost:.2f}")
