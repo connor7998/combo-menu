@@ -109,3 +109,17 @@ print(order_list)
 
 # Total Cost
 print(f"Total cost of your order is: ${cost:.2f}")
+
+
+#loop thingy 3.2.3
+
+while True:
+    order_again = get_yes_no("Would you like to order again? Y/N: ")
+    if order_again == True or order_again == "Y": 
+        order_list.append  (input("Would you like a chicken, beef, chorizo, or tofu sandwich?"))
+        order_list.append (input("Would you like a small, medium, large, or extra large beverage?"))
+        order_list.append (input("Would you like small, medium, or large french fries?"))
+
+    print(order_list)
+    if not order_again:
+        break
